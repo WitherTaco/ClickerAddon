@@ -7,8 +7,6 @@ namespace ClickerAddon
 {
 	public partial class ClickerAddonPlayer : ModPlayer
 	{
-		private static Player player = Main.LocalPlayer;
-		
 		public bool clickerCobaltSet = false;
 		public bool gamerBoots = false;
 		public bool magmaChair = false;

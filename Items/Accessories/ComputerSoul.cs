@@ -29,9 +29,7 @@ namespace ClickerAddon.Items.Accessories
 				+ "\nWhile equipped, cookies will periodically spawn within your clicker radius"
 				+ "\nGain up to 15% clicker damage based on your amount of clicks within a second"
 				+ "\nEvery 10 clicks sticks damaging slime on to your screen"
-				+ "\nWhile in combat, automatically clicks your current clicker every half-second"
-				
-				+ "\nMice, Overclock, Precursor and Motherboard armors set effect");
+				+ "\nWhile in combat, automatically clicks your current clicker every half-second");
 		}
 
 		public override void SetDefaults() 
@@ -66,10 +64,10 @@ namespace ClickerAddon.Items.Accessories
 			ClickerCompat.SetAccessory(player, "GlassOfMilk");
 			
 			//Armor Set Effect
-			ClickerCompat.SetArmorSet(player, "Motherboard");
+			/*ClickerCompat.SetArmorSet(player, "Motherboard");
 			ClickerCompat.SetArmorSet(player, "Overclock");
 			ClickerCompat.SetArmorSet(player, "Precursor");
-			ClickerCompat.SetArmorSet(player, "Mice");
+			ClickerCompat.SetArmorSet(player, "Mice");*/
 		}
 		
 		public override void AddRecipes()
@@ -78,13 +76,12 @@ namespace ClickerAddon.Items.Accessories
 			ModRecipe recipe = new ModRecipe(mod);
 			
 			recipe.AddIngredient(null, "EvilGamepadEssence");
-			recipe.AddIngredient(null, "ForceOfProgramm");
+			/*recipe.AddIngredient(null, "ForceOfProgramm");*/
 			recipe.AddIngredient(clickerClass.ItemType("GamerCrate"));
 			recipe.AddIngredient(clickerClass.ItemType("StickyKeychain"));
 			recipe.AddIngredient(clickerClass.ItemType("ChocolateMilkCookies"));
-			
 			recipe.AddIngredient(clickerClass.ItemType("RegalClickingGlove"));
-			/*recipe.AddIngredient(null, "Clicker");*/
+			
 			recipe.AddIngredient(clickerClass.ItemType("CaptainsClicker"));
 			recipe.AddIngredient(clickerClass.ItemType("SpectreClicker"));
 			recipe.AddIngredient(clickerClass.ItemType("WitchClicker"));
