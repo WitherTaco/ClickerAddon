@@ -1,0 +1,7 @@
+author = WitherTaco
+version = 1.0
+displayName = WitherTaco`s Clicker Class Addon (Beta)
+includePDB = true
+buildIgnore = *.csproj, *.sln, *.user, *.md, obj\*, bin\*, .vs\*, .git\*, .gitignore, Ignore\*
+modReference = ClickerClass
+homepage = https://discord.gg/gJPGUpu7
