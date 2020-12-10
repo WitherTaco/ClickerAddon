@@ -6,13 +6,13 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
 
-namespace ClickerAddon.Items.Accessories
+namespace ClickerAddon.Items.Fargo.Accessories
 {
 	public class ComputerSoul : ModItem
 	{
 		public override bool Autoload(ref string name)
 		{
-			return ClickerCompat.ClickerClass != null;
+			return ((ClickerCompat.ClickerClass != null) && (Terraria.ModLoader.ModLoader.GetMod("Fargowiltas") != null));
 		}
 		
 		public override void SetStaticDefaults() 
@@ -47,14 +47,16 @@ namespace ClickerAddon.Items.Accessories
 			ClickerCompat.SetDamageAdd(player, 0.3f);
 			ClickerCompat.SetClickerCritAdd(player, 15);
 			ClickerCompat.SetClickerRadiusAdd(player, 1.5f);
-			ClickerCompat.SetClickerBonusPercentAdd(player, 0.25f);
+			ClickerCompat.SetClickerBonusPercentAdd(player, 0.25f * -1);
 			ClickerCompat.SetAccessory(player, "HandCream");
 			
 			//Acc Effect
 			ClickerCompat.SetAccessory(player, "Cookie2");
 			ClickerCompat.SetAccessory(player, "GlassOfMilk");
-			ClickerCompat.SetAccessory(player, "StickyKeychain");
-			ClickerCompat.SetAccessory(player, "ChocolateChip");
+			//ClickerCompat.SetAccessory(player, "StickyKeychain");
+			//ClickerCompat.SetAccessory(player, "ChocolateChip");
+			ClickerCompat.EnableClickEffect(player, "ClickerClass:ChocolateChip");
+			ClickerCompat.EnableClickEffect(player, "ClickerClass:StickyKeychain");
 			ClickerCompat.SetAccessory(player, "RegalClickingGlove");
 			if (ClickerAddonConfigClient.Instance.ShowEnchLED || !hideVisual)
 			{
@@ -73,6 +75,7 @@ namespace ClickerAddon.Items.Accessories
 		public override void AddRecipes()
 		{
 			Mod clickerClass = ModLoader.GetMod("ClickerClass");
+			Mod fargo = ModLoader.GetMod("Fargowiltas");
 			ModRecipe recipe = new ModRecipe(mod);
 			
 			recipe.AddIngredient(null, "EvilGamepadEssence");
@@ -88,7 +91,7 @@ namespace ClickerAddon.Items.Accessories
 			recipe.AddIngredient(clickerClass.ItemType("LordsClicker"));
 			recipe.AddIngredient(clickerClass.ItemType("TheClicker"));
 			
-			recipe.AddTile(TileID.LunarCraftingStation);
+			recipe.AddTile(fargo.TileType("CrucibleCosmosSheet"));
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

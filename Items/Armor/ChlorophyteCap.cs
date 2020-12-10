@@ -16,7 +16,7 @@ namespace ClickerAddon.Items.Armor
 		public override void SetStaticDefaults()
 		{
 			ClickerCompat.RegisterClickerItem(this);
-			/*DisplayName.SetDefault("Mice Mask");*/
+			DisplayName.SetDefault("Chlorophyte Capsuit");
 			Tooltip.SetDefault("Increases click damage by 15%"
 							+ "\nIncreases your base click radius by 35%");
 		}
@@ -46,7 +46,8 @@ namespace ClickerAddon.Items.Armor
 		public override void UpdateArmorSet(Player player)
 		{
 			player.setBonus = "Summons a powerful leaf crystal to shoot at nearby enemies.";
-			player.AddBuff(60, 60);
+			player.AddBuff(60, 2);
+			ClickerCompat.EnableClickEffect(player, "ClickerClass:ToxicRelease");
 		}
 
 		public override void ArmorSetShadows(Player player)

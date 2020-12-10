@@ -3,10 +3,15 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ClickerAddon.Projectiles
+namespace ClickerAddon.Projectiles.Clickers
 {
 	public class LordsClickerProSuper : ModProjectile
 	{
+		public override void SetStaticDefaults()
+		{
+			ClickerCompat.RegisterClickerProjectile(this);
+		}
+		
 		public override void SetDefaults()
 		{
 			projectile.width = 784;

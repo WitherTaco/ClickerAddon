@@ -16,7 +16,7 @@ namespace ClickerAddon.Items.Armor
 		public override void SetStaticDefaults()
 		{
 			ClickerCompat.RegisterClickerItem(this);
-			/*DisplayName.SetDefault("Mice Mask");*/
+			DisplayName.SetDefault("Titanium Capsuit");
 			Tooltip.SetDefault("Increases click damage by 8%"
 							+ "\nIncreases your base click radius by 10%");
 		}
@@ -47,6 +47,7 @@ namespace ClickerAddon.Items.Armor
 		{
 			player.setBonus = "Briefly become invulnerable after striking an enemy";
 			player.onHitDodge = true;
+			ClickerCompat.EnableClickEffect(player, "ClickerClass:RazorsEdge");
 		}
 
 		public override void ArmorSetShadows(Player player)

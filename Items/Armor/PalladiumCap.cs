@@ -16,7 +16,7 @@ namespace ClickerAddon.Items.Armor
 		public override void SetStaticDefaults()
 		{
 			ClickerCompat.RegisterClickerItem(this);
-			/*DisplayName.SetDefault("Mice Mask");*/
+			DisplayName.SetDefault("Palladium Capsuit");
 			Tooltip.SetDefault("Increases click damage by 5%");
 		}
 
@@ -44,6 +44,7 @@ namespace ClickerAddon.Items.Armor
 		{
 			player.setBonus = "Greatly increases life regeneration after striking an enemy";
 			player.onHitRegen = true;
+			ClickerCompat.EnableClickEffect(player, "ClickerClass:Regenerate");
 		}
 
 		public override void ArmorSetShadows(Player player)

@@ -16,7 +16,7 @@ namespace ClickerAddon.Items.Armor
 		public override void SetStaticDefaults()
 		{
 			ClickerCompat.RegisterClickerItem(this);
-			/*DisplayName.SetDefault("Mice Mask");*/
+			DisplayName.SetDefault("Mythril Capsuit");
 			Tooltip.SetDefault("Increases click damage by 6%"
 							+ "\nIncreases your base click radius by 25%");
 		}
@@ -48,6 +48,7 @@ namespace ClickerAddon.Items.Armor
 			player.setBonus = "Increases click damage by 15%";
 			/*player.GetModPlayer<ClickerPlayer>().clickerDamage += 0.15f;*/
 			ClickerCompat.SetDamageAdd(player, 0.15f);
+			ClickerCompat.EnableClickEffect(player, "ClickerClass:Embrittle");
 		}
 
 		public override void ArmorSetShadows(Player player)

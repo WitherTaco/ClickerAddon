@@ -16,7 +16,7 @@ namespace ClickerAddon.Items.Armor
 		public override void SetStaticDefaults()
 		{
 			ClickerCompat.RegisterClickerItem(this);
-			/*DisplayName.SetDefault("Mice Mask");*/
+			DisplayName.SetDefault("Hallowed Capsuit");
 			Tooltip.SetDefault("Increases click damage by 12%"
 							+ "\nIncreases your base click radius by 20%");
 		}
@@ -48,6 +48,7 @@ namespace ClickerAddon.Items.Armor
 			player.setBonus = "Increases click critical strike chance by 6%";
 			/*player.GetModPlayer<ClickerPlayer>().clickerCrit += 6;*/
 			ClickerCompat.SetClickerCritAdd(player, 6);
+			ClickerCompat.EnableClickEffect(player, "ClickerClass:HolyNova");
 		}
 
 		public override void ArmorSetShadows(Player player)

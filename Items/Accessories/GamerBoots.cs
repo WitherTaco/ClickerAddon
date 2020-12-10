@@ -23,14 +23,15 @@ namespace ClickerAddon.Items.Accessories
 		{
 			item.width = 32;
 			item.height = 32;
-			item.value = 100000;
+			item.value = 50000;
 			item.rare = 3;
 			item.accessory = true;
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) 
 		{
-			/*player.GetModPlayer<ClickerAddonPlayer>().gamerBoots = true;*/
+			//player.GetModPlayer<ClickerAddonPlayer>().gamerBoots = true;
+			player.moveSpeed += (float)(ClickerCompat.GetClickerPerSecond(player) * 0.2f);
 		}
 		
 		public override void AddRecipes()

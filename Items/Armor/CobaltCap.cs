@@ -16,7 +16,7 @@ namespace ClickerAddon.Items.Armor
 		public override void SetStaticDefaults()
 		{
 			ClickerCompat.RegisterClickerItem(this);
-			/*DisplayName.SetDefault("Mice Mask");*/
+			DisplayName.SetDefault("Cobalt Capsuit");
 			Tooltip.SetDefault("Increases click damage by 4%"
 							+ "\nIncreases your base click radius by 20%");
 		}
@@ -46,7 +46,8 @@ namespace ClickerAddon.Items.Armor
 		public override void UpdateArmorSet(Player player)
 		{
 			player.setBonus = "Every 5 clicks to get buff 'Haste'";
-			player.GetModPlayer<ClickerAddonPlayer>().clickerCobaltSet = true;
+			//player.GetModPlayer<ClickerAddonPlayer>().clickerCobaltSet = true;
+			ClickerCompat.EnableClickEffect(player, "ClickerClass:Haste");
 		}
 
 		public override void ArmorSetShadows(Player player)

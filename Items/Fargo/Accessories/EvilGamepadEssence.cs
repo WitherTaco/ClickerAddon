@@ -3,20 +3,21 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
 
-namespace ClickerAddon.Items.Accessories
+namespace ClickerAddon.Items.Fargo.Accessories
 {
 	public class EvilGamepadEssence : ModItem
 	{
 		public override bool Autoload(ref string name)
 		{
-			return ClickerCompat.ClickerClass != null;
+			return ((ClickerCompat.ClickerClass != null) && (Terraria.ModLoader.ModLoader.GetMod("Fargowiltas") != null));
 		}
 		
 		public override void SetStaticDefaults() 
 		{
 			ClickerCompat.RegisterClickerItem(this);
 			Tooltip.SetDefault("18% increased clicker damage"
-				+ "\n5% increased clicker crit");
+				+ "\n5% increased clicker crit"
+				+ "\n1 click reduces the amount of clicks required for a click effect");
 		}
 
 		public override void SetDefaults() 
@@ -34,6 +35,7 @@ namespace ClickerAddon.Items.Accessories
 			player.GetModPlayer<ClickerPlayer>().clickerCrit += 5;*/
 			ClickerCompat.SetDamageAdd(player, 0.18f);
 			ClickerCompat.SetClickerCritAdd(player, 5);
+			ClickerCompat.SetClickerBonusAdd(player, 1 * -1);
 		}
 		
 		public override void AddRecipes()

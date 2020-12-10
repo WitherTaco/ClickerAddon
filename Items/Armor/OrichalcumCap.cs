@@ -16,7 +16,7 @@ namespace ClickerAddon.Items.Armor
 		public override void SetStaticDefaults()
 		{
 			ClickerCompat.RegisterClickerItem(this);
-			/*DisplayName.SetDefault("Mice Mask");*/
+			DisplayName.SetDefault("Orichalcum Capsuit");
 			Tooltip.SetDefault("Increases click damage by 10%");
 		}
 
@@ -44,6 +44,7 @@ namespace ClickerAddon.Items.Armor
 		{
 			player.setBonus = "Flower petals will fall on your target for extra damage";
 			player.onHitPetal = true;
+			ClickerCompat.EnableClickEffect(player, "ClickerClass:PetalStorm");
 		}
 
 		public override void ArmorSetShadows(Player player)

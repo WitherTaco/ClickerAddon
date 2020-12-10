@@ -22,6 +22,13 @@ namespace ClickerAddon.Items.Weapons.Clickers
 			ClickerCompat.RegisterClickerWeapon(this);
 			/*DisplayName.SetDefault("Copper Clicker");*/
 			Tooltip.SetDefault("Click on an enemy within range and sight to damage them");
+			string DoubleClickClone = ClickerCompat.RegisterClickEffect(mod, "DoubleClick", "Double Click", "Deals damage twice with one attack", 1, Color.White, delegate (Player player, Vector2 position, int type, int damage, float knockBack)
+			{
+				Main.PlaySound(SoundID.Item, (int)Main.MouseWorld.X, (int)Main.MouseWorld.Y, 37);
+				Mod clickerClass = ModLoader.GetMod("ClickerClass");
+				Projectile.NewProjectile(Main.MouseWorld.X, Main.MouseWorld.Y, 0f, 0f, clickerClass.ProjectileType("ClickDamage"), damage, knockBack, player.whoAmI);
+			});
+
 		}
 		
 		public override void SetDefaults()
@@ -32,7 +39,8 @@ namespace ClickerAddon.Items.Weapons.Clickers
 			ClickerCompat.SetDust(item, 9);
 			/*ClickerCompat.SetEffect(item, "Double Click");
 			ClickerCompat.SetAmount(item, 1);*/
-			ClickerCompat.SetEffectW(item, "Double Click", 1);
+			//ClickerCompat.SetEffectW(item, "Double Click", 1);
+			ClickerCompat.AddEffect(item, "ClickerAddon:DoubleClick");
 			
 			item.damage = 47;
 			item.width = 30;

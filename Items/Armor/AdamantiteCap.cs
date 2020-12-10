@@ -16,7 +16,7 @@ namespace ClickerAddon.Items.Armor
 		public override void SetStaticDefaults()
 		{
 			ClickerCompat.RegisterClickerItem(this);
-			/*DisplayName.SetDefault("Mice Mask");*/
+			DisplayName.SetDefault("Adamantite Capsuit");
 			Tooltip.SetDefault("Increases click damage by 6%"
 							+ "\nIncreases your base click radius by 20%");
 		}
@@ -36,6 +36,7 @@ namespace ClickerAddon.Items.Armor
 			player.GetModPlayer<ClickerPlayer>().clickerRadius += 0.4f;*/
 			ClickerCompat.SetDamageAdd(player, 0.06f);
 			ClickerCompat.SetClickerRadiusAdd(player, 0.4f);
+			ClickerCompat.EnableClickEffect(player, "ClickerClass:TrueStrike");
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
