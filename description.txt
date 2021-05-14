@@ -42,7 +42,7 @@ Other content:
     . Calamity (not end. Armor only)
 . Fargo`s Soul Mod DLC: Enchantments have effect from Calamity Capsuits
 
--=1.1.10=-
+-=1.1.10.1=-
 [c/00FFFF:New content:]
 . Added Lunar Gel Armor (rainbow gel armor + every fragment jelly X 15 @ Ancient Manipulator. Shadows of Abbadon Cross-Content)
 . Added Bloodflare, God Slayer, Silva and Auric Tesla Capsuits (Calamity Cross-Content)
