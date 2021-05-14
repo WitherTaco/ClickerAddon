@@ -8,7 +8,7 @@ namespace ClickerAddon.Items.Accessories
 	{
 		public override bool Autoload(ref string name)
 		{
-			return ClickerCompat.ClickerClass != null;
+			return WitherTacoLib.IfMod();
 		}
 		
 		public override void SetStaticDefaults()
@@ -24,8 +24,8 @@ namespace ClickerAddon.Items.Accessories
 			item.width = 20;
 			item.height = 20;
 			item.accessory = true;
-			item.value = 25000;
-			item.rare = 1;
+			item.value = 10000 * 5;
+			item.rare = ItemRarityID.Blue;
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

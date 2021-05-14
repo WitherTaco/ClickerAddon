@@ -14,15 +14,15 @@ namespace ClickerAddon.Items.Weapons.Clickers
 	{
 		public override bool Autoload(ref string name)
 		{
-			return ClickerCompat.ClickerClass != null;
+			return WitherTacoLib.IfMod();
 		}
-		
+
 		public override void SetStaticDefaults()
 		{
 			ClickerCompat.RegisterClickerWeapon(this);
 			/*DisplayName.SetDefault("Copper Clicker");*/
 			Tooltip.SetDefault("Click on an enemy within range and sight to damage them");
-			string DoubleClickClone = ClickerCompat.RegisterClickEffect(mod, "DoubleClick", "Double Click", "Deals damage twice with one attack", 1, Color.White, delegate (Player player, Vector2 position, int type, int damage, float knockBack)
+			string DoubleClickClone = ClickerCompat.RegisterClickEffect(mod, "DoubleClick", "Double Click", "Deals damage twice with one attack", 6, Color.White, delegate (Player player, Vector2 position, int type, int damage, float knockBack)
 			{
 				Main.PlaySound(SoundID.Item, (int)Main.MouseWorld.X, (int)Main.MouseWorld.Y, 37);
 				Mod clickerClass = ModLoader.GetMod("ClickerClass");
@@ -46,8 +46,8 @@ namespace ClickerAddon.Items.Weapons.Clickers
 			item.width = 30;
 			item.height = 30;
 			item.knockBack = 1f;
-			item.value = 1000;
-			item.rare = 5;
+			item.value = 40000 * 5;
+			item.rare = ItemRarityID.Yellow;
 		}
 
 		public override void AddRecipes()
@@ -56,7 +56,7 @@ namespace ClickerAddon.Items.Weapons.Clickers
 			ModRecipe recipe = new ModRecipe(mod);
 			
 			recipe.AddIngredient(clickerClass.ItemType("CopperClicker"));
-			recipe.AddIngredient(mod.ItemType("BrockenHeroClicker"), 4);
+			recipe.AddIngredient(mod.ItemType("BrockenHeroClicker"), 1);
 			
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);

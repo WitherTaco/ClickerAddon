@@ -14,16 +14,16 @@ namespace ClickerAddon.Items.Weapons.Clickers
 	{
 		public override bool Autoload(ref string name)
 		{
-			return ClickerCompat.ClickerClass != null;
+			return WitherTacoLib.IfMod();
 		}
-		
+
 		public override void SetStaticDefaults()
 		{
 			ClickerCompat.RegisterClickerWeapon(this);
 			DisplayName.SetDefault("True Arthur's Clicker");
 			Tooltip.SetDefault("Click on an enemy within range and sight to damage them");
 
-			string HolyNovaClone = ClickerCompat.RegisterClickEffect(mod, "HolyNova", "Holy Nova", "Damages every enemy within the clicker's radius with a guaranteed critical hit", 9, new Color(255, 225, 0, 0), delegate (Player player, Vector2 position, int type, int damage, float knockBack)
+			string HolyNovaClone = ClickerCompat.RegisterClickEffect(mod, "HolyNova", "True Holy Nova", "Damages every enemy within the clicker's radius with a guaranteed critical hit", 9, new Color(255, 225, 0, 0), delegate (Player player, Vector2 position, int type, int damage, float knockBack)
 			{
 				Main.PlaySound(SoundID.NPCHit, (int)Main.MouseWorld.X, (int)Main.MouseWorld.Y, 5);
 				Mod clickerClass = ModLoader.GetMod("ClickerClass");
@@ -45,7 +45,7 @@ namespace ClickerAddon.Items.Weapons.Clickers
 
 						for (int k = 0; k < 30; k++)
 						{
-							Dust dust = Dust.NewDustDirect(target.Center, 8, 8, 87, vector.X + Main.rand.NextFloat(-1f, 1f), vector.Y + Main.rand.NextFloat(-1f, 1f), 0, default, 1.25f);
+							Dust dust = Dust.NewDustDirect(target.Center, 8, 8, 70, vector.X + Main.rand.NextFloat(-1f, 1f), vector.Y + Main.rand.NextFloat(-1f, 1f), 0, default, 1.25f);
 							dust.noGravity = true;
 						}
 					}
@@ -58,7 +58,7 @@ namespace ClickerAddon.Items.Weapons.Clickers
 					Vector2 vector12 = Vector2.UnitX * 0f;
 					vector12 += -Vector2.UnitY.RotatedBy((double)((float)num103 * (6.28318548f / num102)), default(Vector2)) * new Vector2(2f, 2f);
 					vector12 = vector12.RotatedBy((double)Vector2.Zero.ToRotation(), default(Vector2));
-					int num104 = Dust.NewDust(Main.MouseWorld, 0, 0, 87, 0f, 0f, 0, default(Color), 2f);
+					int num104 = Dust.NewDust(Main.MouseWorld, 0, 0, 70, 0f, 0f, 0, default(Color), 2f);
 					Main.dust[num104].noGravity = true;
 					Main.dust[num104].position = Main.MouseWorld + vector12;
 					Main.dust[num104].velocity = Vector2.Zero * 0f + vector12.SafeNormalize(Vector2.UnitY) * 15f;
@@ -81,8 +81,8 @@ namespace ClickerAddon.Items.Weapons.Clickers
 			item.width = 30;
 			item.height = 30;
 			item.knockBack = 1f;
-			item.value = 1000;
-			item.rare = 5;
+			item.value = 50000 * 5;
+			item.rare = ItemRarityID.Lime;
 		}
 		
 		public override void AddRecipes()
@@ -92,7 +92,6 @@ namespace ClickerAddon.Items.Weapons.Clickers
 			
 			recipe.AddIngredient(clickerClass.ItemType("ArthursClicker"));
 			recipe.AddIngredient(ItemID.ChlorophyteBar, 24);
-			recipe.AddIngredient(mod.ItemType("BrockenHeroClicker"));
 			
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);

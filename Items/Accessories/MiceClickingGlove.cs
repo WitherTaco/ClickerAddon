@@ -5,11 +5,12 @@ using Terraria.ModLoader;
 
 namespace ClickerAddon.Items.Accessories
 {
+	[AutoloadEquip(EquipType.HandsOn)]
 	public class MiceClickingGlove : ModItem
 	{
 		public override bool Autoload(ref string name)
 		{
-			return ClickerCompat.ClickerClass != null;
+			return WitherTacoLib.IfMod();
 		}
 		
 		public override void SetStaticDefaults()
@@ -17,7 +18,8 @@ namespace ClickerAddon.Items.Accessories
 			ClickerCompat.RegisterClickerItem(this);
 			Tooltip.SetDefault("While in combat, automatically clicks your current clicker every half-second"
 							+ "\nIncreases click damage by 10%"
-							+ "\nIncreases click critical strike chance by 2%");
+							+ "\nIncreases click critical strike chance by 2%"
+							+ "\nClicker attacks inflict fire damage");
 		}
 
 		public override void SetDefaults()
@@ -25,8 +27,8 @@ namespace ClickerAddon.Items.Accessories
 			item.width = 20;
 			item.height = 20;
 			item.accessory = true;
-			item.value = 35000;
-			item.rare = 4;
+			item.value = 45000 * 5;
+			item.rare = ItemRarityID.Red;
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)
@@ -35,6 +37,7 @@ namespace ClickerAddon.Items.Accessories
 			ClickerCompat.SetAccessory(player, "RegalClickingGlove");
 			ClickerCompat.SetDamageAdd(player, 0.1f);
 			ClickerCompat.SetClickerCritAdd(player, 2);
+			player.GetModPlayer<ClickerAddonPlayer>().magmaChair = true;
 		}
 		
 		public override void AddRecipes()
@@ -42,7 +45,7 @@ namespace ClickerAddon.Items.Accessories
 			Mod clickerClass = ModLoader.GetMod("ClickerClass");
 			ModRecipe recipe = new ModRecipe(mod);
 			
-			recipe.AddIngredient(clickerClass.ItemType("RegalClickingGlove"));
+			recipe.AddIngredient(mod.ItemType("MagmaClickingGlove"));
 			recipe.AddIngredient(clickerClass.ItemType("MiceFragment"), 8);
 			
 			recipe.AddTile(TileID.LunarCraftingStation);

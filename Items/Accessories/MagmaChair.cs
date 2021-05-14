@@ -9,14 +9,14 @@ namespace ClickerAddon.Items.Accessories
 	{
 		public override bool Autoload(ref string name)
 		{
-			return ClickerCompat.ClickerClass != null;
+			return WitherTacoLib.IfMod();
 		}
 		
 		public override void SetStaticDefaults() 
 		{
 			ClickerCompat.RegisterClickerItem(this);
-			Tooltip.SetDefault("'Burning chair after bombing farts after a fail'"
-			+"\nClickers attacks inflict fire damage.");
+			Tooltip.SetDefault("'Burning chair after bombing farts'"
+			+"\nClicker attacks inflict fire damage");
 		}
 
 		public override void SetDefaults() 
@@ -24,8 +24,17 @@ namespace ClickerAddon.Items.Accessories
 			item.width = 32;
 			item.height = 32;
 			item.value = 100000;
-			item.rare = 3;
+			item.rare = ItemRarityID.Orange;
 			item.accessory = true;
+
+			item.useTurn = true;
+			item.autoReuse = true;
+			item.useAnimation = 15;
+			item.useTime = 10;
+			item.useStyle = ItemUseStyleID.SwingThrow;
+			item.consumable = true;
+
+			item.createTile = mod.TileType("MagmaChair");
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) 
@@ -36,10 +45,10 @@ namespace ClickerAddon.Items.Accessories
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(34);
-			recipe.AddIngredient(1322);
+			recipe.AddIngredient(ItemID.WoodenChair);
+			recipe.AddIngredient(ItemID.MagmaStone);
 			
-			recipe.AddTile(114);
+			recipe.AddTile(TileID.TinkerersWorkbench);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

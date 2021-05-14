@@ -1,1 +1,137 @@
-...
+Clicker Addon it is mod that adds more items for Clicker Class Mod.
+Mod have a cross-content items. Mod created by young developer.
+
+Mod adds:
+. 11 Accessories
+    . + For Fargo`s Soul Mod:
+        . 1 Soul
+        . 1 Essence
+        . 1 Force
+        . 4 Enchantments
+    . + 1 for Shadows of Abbadon
+    . + 1 for Element Unslech
+    . + 1 for Mod of Redemption
+. 8 Clicker class Helmets
+    . + 2 for Mod of Redemption
+    . + 1 for GaMeTerraria mod
+    . + 12 for Calamity Mod
+. 3 Armor Set
+    . + 1 for Shadows of Abbadon 
+. 1 Potion
+. 11 Clickers weapons
+    . + 2 for Mod of Redemption
+    . + 2 for Fargo`s Soul Mod
+    . + 2 for Calamity Mod
+    . + 2 for Example Mod
+    . + 2 for Thorium Mod
+. 7 Cheat item
+. 2 Crafting Material
+    . + 1 for Shadows of Abbadon
+. 13 Tiles
+. 1 Walls
+. 1 Secret Item
+. 2 Other items for Shadows of Abbadon
+
+Other content:
+. Boss Checklist Support
+. Shadow of Abbadon: Nuba now sell Mice Fragment
+. Portable Particle Accelerator can droped from Shark in Hardmode
+. Crit bonuses from other mods it is work for clicker class: 
+    . Fargo`s Mod
+    . Shadows of Abbadon
+    . Calamity (not end. Armor only)
+. Fargo`s Soul Mod DLC: Enchantments have effect from Calamity Capsuits
+
+-=1.1.10=-
+[c/00FFFF:New content:]
+. Added Lunar Gel Armor (rainbow gel armor + every fragment jelly X 15 @ Ancient Manipulator. Shadows of Abbadon Cross-Content)
+. Added Bloodflare, God Slayer, Silva and Auric Tesla Capsuits (Calamity Cross-Content)
+. Added Clicker of the Cult (Fargo`s Mod Cross-Content. Lunatic Cultist weapon)
+. Added Clicker`s Mutagen (Mod of Redemption Cross-Content)
+. Auto Clicker Cheat item have two version: normal, 10x and Configurable
+    . New config
+. Effects from Calamity Set Capsuits have in Set`s Enchantments and their derivatives (Fargo`s Soul Mod DLC Cross-Content)
+      . For example, Reaver Enchantments have effect from Reaver Capsuit
+[c/00FFFF:Fixes:]
+. Fixed stats from Tarragon Capsuit
+. Fixed home page bug (thanks JohnSmith777779 github)
+[c/00FFFF:Changes:]
+. Accessories from Fargo`s Mod Cross-Content haven`t item gravity
+. Rainbow gel armor have half-rainbow animation
+. Crit from Calamity armor it is worked for clicker class
+. Changed craft from The Super Clicker (used Clicker of the Cult)
+. Updated effect for Daedalus Capsuit
+
+-=1.1.9.1, 1.1.9.2=-
+[c/00FFFF:Fixes:]
+. Fixed emergency bugs
+
+-=1.1.9=-
+[c/00FFFF:New content:]
+. Added [c/00FF00:Magma Clicking Glove] (craft: Regal Clicking Glove + Magma Chair @ Tinkerer`s Workbench)
+. Added [c/00FF00:Daedalus], [c/00FF00:Reaver], [c/00FF00:Hydrothermic] and [c/00FF00:Tarragon] [c/00FF00:Capsuits] (Calamity)
+. Added [c/00FF00:Aquaius`s] and [c/00FF00:Omnicide`s] [c/00FF00:Clicker] (Thorium)
+. Added [c/:Mice Sigil] (Shadows of Abbadon)
+. Added Lux Enhancement Shards for Clicker (Haven`t effect) (Shadows of Abbadon)
+. Nuba now sell Mice Fragment (Shadows of Abbadon)
+. Crit bonus from Fargo`s Mod and Shadow of Abbadon it is work for clicker class
+[c/00FFFF:Changes:]
+. Officially, in this mod, we present the effect Motherboard Enchantment
+. New configs
+. Changed craft for [c/00FF00:The Super Clicker]
+. For [c/00FF00:Mice Clicking Glove] craft required [c/00FF00:Magma Clicking Glove] (not Regal)
+    . [c/00FF00:Mice Clicking Glove] have [c/00FF00:Magma Chair] effect
+. Changed crafts (used RecipeGroups method)
+[c/00FFFF:Fixes:]
+. Fixex pixels from [c/00FF00:Mice Wall] sprite
+. [c/00FF00:Magma Chair] can be equiped (this was a bug)
+. Now there are definitely no effects of soda and a glass of milk from [c/00FF00:Big Red Button]
+[c/00FFFF:Balance Update:]
+. Nerfed [c/00FFFF:Bee Clicker] (clicks for effect: 6 -> 8)
+. Nerfed [c/00FFFF:Carbonated Potion] (damage from weapon: 50% -> 5%)
+. Nerfed [c/00FFFF:True Copper Clicker] (clicks for effect: 3 -> 6)
+
+-=1.1.8=-
+[c/00FFFF:New content:]
+. Added [c/00FF00:Spectre Clicker Emblem] (Cheat Only)
+. Added [c/00FF00:Band of Clicking]
+. Added [c/00FF00:Mice furniture] (Not End)
+. Added cheat items [c/00FF00:Overclock Buff] and [c/00FF00:Autoclick Buff]
+. [c/00FF00:Mice Clicking Glove] have sprite on player
+. [c/00FF00:Magma Chair] can be placed
+. Added [c/00FF00:The Dice] (droped from Eyezor (10%))
+. Added cross-content for Example Mod
+[c/00FFFF:Changes:]
+. Reworked [c/00FF00:Gamer Boots]
+. Updated crafts from [c/00FF00:True Umbral Clicker] and [c/00FF00:True Arthur`s Clicker]
+. Fixed description from [c/00FF00:Computer Soul]
+[c/00FFFF:Fixes:]
+. Added clicker drop from Thorn (Boss Checklist Mod Support fix) (Mod of Redemption)
+. Fixed Carbonated Happy Buff description
+. Clicker effect color fixes
+[c/00FFFF:Balance Update:]
+. [c/00FF00:Portable Particle] [c/00FF00:Accelerator] now droped in Hardmode
+
+-=1.1.7=-
+[c/00FFFF:New content:]
+. Added [c/00FF00:The Bejeweled Clicker]
+. Added [c/00FF00:Z-Clicker] (Zenith-type Clicker)
+. Added [c/00FF00:Bee Clicker] (Droped from Queen Bee)
+. Added [c/00FF00:Victide Capsuit] (Calamity)
+. Added [c/00FF00:Wulfrum Capsuit] (Calamity)
+. Added a method for getting an [c/00FF00:Portable Particle] [c/00FF00:Accelerator] (droped from Sharks). 
+  . P. S. It is item for Clicker Class Mod.
+. Added [c/00FF00:Victide Clicker]
+. Added [c/00FF00:Aerospec Clicker]
+. Added [c/00FF00:Sticky Obsidian Keychain]
+[c/00FFFF:Fixes:]
+. Fixed effect from [c/00FF00:Mice Enchantment]
+. [c/00FF00:Auto Clicker] have infinity auto click, not 1 second
+. Sound Fixes
+. Clicker effect description fixes
+[c/00FFFF:Balance Update:]
+. Increased damage from projectiles from 
+[c/00FF00:Fishron`s Clicker]
+. Mini update clicker effect from 
+[c/00FF00:True Umbral Clicker] and 
+[c/00FF00:True Arthur`s Clicker]

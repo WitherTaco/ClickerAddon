@@ -9,14 +9,14 @@ namespace ClickerAddon.Items.Accessories
 	{
 		public override bool Autoload(ref string name)
 		{
-			return ClickerCompat.ClickerClass != null;
+			return WitherTacoLib.IfMod();
 		}
 		
 		public override void SetStaticDefaults() 
 		{
 			ClickerCompat.RegisterClickerItem(this);
-			Tooltip.SetDefault("'Coming Soon'"
-			+"\nGain up to 20% move speed based on your amount of clicks within a second.");
+			Tooltip.SetDefault("The wearer can run super fast"
+				+ "\nGain up to move speed based on your amount of clicks within a second.");
 		}
 
 		public override void SetDefaults() 
@@ -24,25 +24,48 @@ namespace ClickerAddon.Items.Accessories
 			item.width = 32;
 			item.height = 32;
 			item.value = 50000;
-			item.rare = 3;
+			item.rare = ItemRarityID.Orange;
 			item.accessory = true;
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) 
 		{
-			//player.GetModPlayer<ClickerAddonPlayer>().gamerBoots = true;
-			player.moveSpeed += (float)(ClickerCompat.GetClickerPerSecond(player) * 0.2f);
+			player.accRunSpeed = 6.75f;
+			player.GetModPlayer<ClickerAddonPlayer>().bandOfClicking = true;
+			//player.moveSpeed += (float)(ClickerCompat.GetClickerPerSecond(player) * 0.2f);
 		}
-		
+
 		public override void AddRecipes()
 		{
-			/*ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(34);
-			recipe.AddIngredient(1322);
-			
-			recipe.AddTile(114);
+			Mod clickerClass = ModLoader.GetMod("ClickerClass");
+			ModRecipe recipe = new ModRecipe(mod);
+
+			recipe.AddIngredient(ItemID.HermesBoots);
+			recipe.AddIngredient(mod.ItemType("BandOfClicking"));
+
+			recipe.AddTile(TileID.TinkerersWorkbench);
 			recipe.SetResult(this);
-			recipe.AddRecipe();*/
+			recipe.AddRecipe();
+
+
+			recipe = new ModRecipe(mod);
+
+			recipe.AddIngredient(ItemID.FlurryBoots);
+			recipe.AddIngredient(mod.ItemType("BandOfClicking"));
+
+			recipe.AddTile(TileID.TinkerersWorkbench);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+
+
+			recipe = new ModRecipe(mod);
+
+			recipe.AddIngredient(ItemID.SailfishBoots);
+			recipe.AddIngredient(mod.ItemType("BandOfClicking"));
+
+			recipe.AddTile(TileID.TinkerersWorkbench);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
 		}
 	}
 }

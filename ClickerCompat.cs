@@ -22,7 +22,7 @@ namespace ClickerAddon
 
 		//This is the version of the calls that are used for the mod.
 		//If Clicker Class updates, it will keep working on the outdated calls, but new features might not be available
-		internal static readonly Version apiVersion = new Version(1, 2, 2);
+		internal static readonly Version apiVersion = new Version(1, 2, 5);
 
 		internal static string versionString;
 

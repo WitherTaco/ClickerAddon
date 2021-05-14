@@ -14,21 +14,21 @@ namespace ClickerAddon.Items.Weapons.Clickers
 	{
 		public override bool Autoload(ref string name)
 		{
-			return ClickerCompat.ClickerClass != null;
+			return WitherTacoLib.IfMod();
 		}
-		
+
 		public override void SetStaticDefaults()
 		{
 			ClickerCompat.RegisterClickerWeapon(this);
 			DisplayName.SetDefault("True Umbral Clicker");
 			Tooltip.SetDefault("Click on an enemy within range and sight to damage them");
 
-			string ShadowLashClone = ClickerCompat.RegisterClickEffect(mod, "ShadowLash", "Shadow Lash", "Damages every enemy within the clicker's radius with a guaranteed critical hit", 8, new Color(150, 100, 255, 0), delegate (Player player, Vector2 position, int type, int damage, float knockBack)
+			string ShadowLashClone = ClickerCompat.RegisterClickEffect(mod, "ShadowLash", "True Shadow Lash", "Causes a burst of 6 shadow projecttiles to seek out nearby enemies", 8, new Color(150, 100, 255, 0), delegate (Player player, Vector2 position, int type, int damage, float knockBack)
 			{
 				Main.PlaySound(SoundID.Item, (int)Main.MouseWorld.X, (int)Main.MouseWorld.Y, 103);
 				Mod clickerClass = ModLoader.GetMod("ClickerClass");
 
-				for (int k = 0; k < 5; k++)
+				for (int k = 0; k < 6; k++)
 				{
 					Projectile.NewProjectile(Main.MouseWorld.X, Main.MouseWorld.Y, Main.rand.NextFloat(-3f, 3f), Main.rand.NextFloat(-3f, 3f), clickerClass.ProjectileType("UmbralClickerPro"), (int)(damage * 0.5f), knockBack, player.whoAmI);
 				}
@@ -41,8 +41,6 @@ namespace ClickerAddon.Items.Weapons.Clickers
 			ClickerCompat.SetRadius(item, 2.9f);
 			ClickerCompat.SetColor(item, new Color(150, 100, 255, 0));
 			ClickerCompat.SetDust(item, 27);
-			//ClickerCompat.SetEffect(item, "Double Click");
-			//ClickerCompat.SetAmount(item, 1);
 			//ClickerCompat.SetEffectW(item, "Shadow Lash", 8);
 			ClickerCompat.AddEffect(item, "ClickerAddon:ShadowLash");
 			
@@ -50,8 +48,8 @@ namespace ClickerAddon.Items.Weapons.Clickers
 			item.width = 30;
 			item.height = 30;
 			item.knockBack = 2f;
-			item.value = 1000;
-			item.rare = 5;
+			item.value = 50000 * 5;
+			item.rare = ItemRarityID.Pink;
 		}
 
 		public override void AddRecipes()
@@ -63,7 +61,6 @@ namespace ClickerAddon.Items.Weapons.Clickers
 			recipe.AddIngredient(ItemID.SoulofSight, 20);
 			recipe.AddIngredient(ItemID.SoulofMight, 20);
 			recipe.AddIngredient(ItemID.SoulofFright, 20);
-			recipe.AddIngredient(mod.ItemType("BrockenHeroClicker"));
 			
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
