@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace ClickerAddon.Items.Materials
 {
-	public class BrockenHeroClicker : ModItem
+	public class BrokenHeroClicker : ModItem
 	{
 		public override bool Autoload(ref string name)
 		{
