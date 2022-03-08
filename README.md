@@ -1,11 +1,11 @@
 # ClickerAddon
 
 Installing
-1. Install Clicker Class Mod
-2. Install Clicker Addon Mod
+1. Install Clicker Class Mod from Mod Browser
+2. Install Clicker Addon Mod from Mod Browser
 3. Play
 
-P. S. mods from Mod Browser
+P. S. mods work on tml 1.3
 
 # FAQ:
 Q: How to get Band Of Clicking?
