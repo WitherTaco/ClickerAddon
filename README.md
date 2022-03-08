@@ -7,6 +7,9 @@ Installing
 
 P. S. mods work on tml 1.3
 
+Links:
+[My discord server](https://discord.gg/eD7rraHz8a)
+
 # FAQ:
 Q: How to get Band Of Clicking?
 
